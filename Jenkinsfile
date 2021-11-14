@@ -8,7 +8,7 @@ pipeline {
                 script{
                 	checkout([$class: 'GitSCM', branches: [[name: '*/master']],
               		userRemoteConfigs: [[
-                    		 credentialsId: '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',
+                    		 credentialsId: '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',
                     		 url: 'https://github.com/ahmedouertani00/esprit.git' ]]])
                 }
             }
@@ -18,8 +18,7 @@ pipeline {
 	    steps{
 	    	echo 'Building..'
 		script {
-			sh "ansible-playbook Ansible/roles/build.yml -i Ansible/inventory/host.yml "
-
+			sh "ansible-playbook Ansible/roles/build.yml -i Ansible/inventory/host.yml"
 		       }
 		 }
 	}
